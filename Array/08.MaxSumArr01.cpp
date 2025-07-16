@@ -12,6 +12,8 @@ Time complexity of this solution is :-------
 #include<iostream>
 using namespace std;
 
+// Brute Force approach --------------------->>>>>>
+
 void MaxsubArrSum(int *arr, int n){
   int MaxSum = INT16_MIN;
   
@@ -28,7 +30,25 @@ for(int st=0; st<n ; st++){
   }
   cout<<endl;
 }
-  cout<<"Maximum sum of the subarray ="<<" "<< MaxSum <<endl;
+cout<<"Maximum sum of the subarray ="<<" "<< MaxSum <<endl;
+cout<<endl;
+}
+
+
+// Optimized Approach ------------------------------------->>>>>>>>>>>>>>>>>>
+
+void MaxsubArrSum2(int *arr, int n){
+  int MaxSum = INT16_MIN;
+  
+for(int st=0; st<n ; st++){
+  int CurrSum=0;
+  for(int end=st; end<n; end++){
+   CurrSum += arr[end];
+  MaxSum= max(MaxSum , CurrSum);
+
+  }
+}
+  cout<<"Optimized Maximum sum of the subarray ="<<" "<< MaxSum <<endl;
 
 }
 
@@ -38,6 +58,7 @@ int arr[6]={2,-3,6,-5,4,2};
 int n=6;
 
 MaxsubArrSum(arr,n);
+MaxsubArrSum2(arr,n);
 
 return 0;
 }
@@ -54,5 +75,7 @@ OUtput :-------->>>>>
 2 
 
 Maximum sum of the subarray = 7
+
+Optimized Maximum sum of the subarray = 7
 
 */
