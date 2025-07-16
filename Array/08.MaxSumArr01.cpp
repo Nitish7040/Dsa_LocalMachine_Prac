@@ -52,6 +52,24 @@ for(int st=0; st<n ; st++){
 
 }
 
+
+/*    Solve this Using Kadans Algorithm >.............         */
+
+void MaxsubArrSum3(int *arr, int n){
+  int MaxSum = INT16_MIN;
+  int CurrSum=0;
+  
+for(int i=0; i<n; i++){
+  CurrSum += arr[i];
+  MaxSum = max(CurrSum , MaxSum);
+  if(CurrSum <0){
+    CurrSum =0;
+  }
+}
+  cout<<"Maximum sum of the subarray Using Kadans Algo. ="<<" "<< MaxSum <<endl;
+
+}
+
 int main(){
 
 int arr[6]={2,-3,6,-5,4,2};
@@ -59,6 +77,7 @@ int n=6;
 
 MaxsubArrSum(arr,n);
 MaxsubArrSum2(arr,n);
+MaxsubArrSum3(arr,n);
 
 return 0;
 }
